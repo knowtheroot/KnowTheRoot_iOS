@@ -1,5 +1,5 @@
 # Mach详解
-
+摘自《深入解析Mac OS X && iOS操作系统笔记》
 ## 内核
 
 在操作系统中，都有一个关键的核心组件，叫做**内核（kernel）**。  
@@ -67,10 +67,10 @@ typedef struct
   mach_msg_trailer_size_t   msgh_trailer_size;
 } mach_msg_trailer_t; //消息尾
 ```
-#### 2.2复杂消息
+#### 2.2 复杂消息
 将消息头的标志位**mach_msg_bits_t**设置为MACH_MSGH_BITS_COMPLEX，就表示复杂消息。
 
-#### 2.3消息收发
+#### 2.3 消息收发
 消息的收发在用户态都是通过如下方法进行的：
 ```
 extern mach_msg_return_t    mach_msg(
@@ -82,3 +82,62 @@ extern mach_msg_return_t    mach_msg(
                     mach_msg_timeout_t timeout,
                     mach_port_name_t notify);  
 ```
+#### 2.4 端口
+端口实际上是一个整型的标识符。  
+其结构如下：
+```
+struct ipc_port {
+
+    /*
+     * Initial sub-structure in common with ipc_pset
+     * First element is an ipc_object second is a
+     * message queue
+     */
+    struct ipc_object ip_object;
+    struct ipc_mqueue ip_messages;
+
+    natural_t ip_sprequests:1,  /* send-possible requests outstanding */
+          ip_spimportant:1, /* ... at least one is importance donating */
+          ip_impdonation:1, /* port supports importance donation */
+          ip_tempowner:1,   /* dont give donations to current receiver */
+          ip_guarded:1,         /* port guarded (use context value as guard) */
+          ip_strict_guard:1,    /* Strict guarding; Prevents user manipulation of context values directly */
+          ip_reserved:2,
+          ip_impcount:24;   /* number of importance donations in nested queue */
+
+    union {
+        struct ipc_space *receiver;
+        struct ipc_port *destination;
+        ipc_port_timestamp_t timestamp;
+    } data;
+
+    union {
+        ipc_kobject_t kobject;
+        ipc_importance_task_t imp_task;
+        uintptr_t alias;
+    } kdata;
+        
+    struct ipc_port *ip_nsrequest;
+    struct ipc_port *ip_pdrequest;
+    struct ipc_port_request *ip_requests;
+    struct ipc_kmsg *ip_premsg;
+
+    mach_vm_address_t ip_context;
+
+    mach_port_mscount_t ip_mscount;
+    mach_port_rights_t ip_srights;
+    mach_port_rights_t ip_sorights;
+
+#if MACH_ASSERT
+#define IP_NSPARES      4
+#define IP_CALLSTACK_MAX    16
+/*  queue_chain_t   ip_port_links;*//* all allocated ports */
+    thread_t    ip_thread;  /* who made me?  thread context */
+    unsigned long   ip_timetrack;   /* give an idea of "when" created */
+    uintptr_t   ip_callstack[IP_CALLSTACK_MAX]; /* stack trace */
+    unsigned long   ip_spares[IP_NSPARES]; /* for debugging */
+#endif  /* MACH_ASSERT */
+} __attribute__((__packed__));
+```
+#### 2.5 Mach消息传递模型
+Mach消息传递模型是远程调用（Remote Procedure Call，RPC）的一种现实(类似Thrift)。
