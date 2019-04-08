@@ -70,6 +70,22 @@ mmap内存映射的实现过程，总的来说可以分为三个阶段：
 - 常规文件操作需要从磁盘到页缓存再到用户主存的两次数据拷贝。  
 - 而mmap操控文件，只需要从磁盘到用户主存的一次数据拷贝过程。mmap的关键点是**实现了用户空间和内核空间的数据直接交互而省去了空间不同数据不通的繁琐过程**。因此mmap效率更高。
 
+### mmap的例子
+对硬盘上一个名为“mmap_test”的文件进行操作，文件中存有10000个整数，程序两次使用不同的方法将它们读出，加1，再写回硬盘。
+```
+gettimeofday( &tv1, NULL );
+fd = open( "mmap_test", O_RDWR );
+array = mmap( NULL, sizeof(int)*MAX, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0 );
+for( i=0; i<MAX; ++i )
+ 
+++array[ i ];
+munmap( array, sizeof(int)*MAX );
+msync( array, sizeof(int)*MAX, MS_SYNC );
+free( array );
+close( fd );
+gettimeofday( &tv2, NULL );
+```
+
 ## mmap的优点
 - 对文件的读取操作**跨过了页缓存，减少了数据的拷贝次数**，用内存读写取代I/O读写，提高了文件读取效率。
 - 实现了**用户空间和内核空间的高效交互方式**。两空间的各自修改操作可以**直接反映在映射的区域内**，从而被对方空间及时捕捉。
