@@ -1,3 +1,4 @@
+![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/Flutter_main.png)
 # Flutter技术概览
 
 ## 前言
