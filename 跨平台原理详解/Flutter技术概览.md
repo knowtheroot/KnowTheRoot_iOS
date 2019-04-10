@@ -1,6 +1,14 @@
-![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/Flutter_main.png)
-# Flutter技术概览
-
+![avatar](https://user-gold-cdn.xitu.io/2019/4/10/16a07199d04afb58?w=1600&h=586&f=png&s=41169)
+#### 关于作者
+```
+E-moss，程序员，爱好阅读和撸狗，主要从事iOS开发工作，公众号：知本集。  
+主要分享和编写技术方面文章，不定期分享读书笔记，亦可访问“知本集”Git地址：https://github.com/knowtheroot/KnowTheRoot_iOS，欢迎提出问题和讨论。
+```
+#### 文章目录
+- Flutter框架架构
+- Widget
+- Flutter界面渲染简述
+- 总结
 ## 前言
 
 目前hybrid开发模式：
@@ -9,7 +17,7 @@
 
 2.为了解决WebView性能差的问题，以React Native为代表的一类框架将最终渲染工作交还给了系统，虽然同样使用类HTML+JS的UI构建逻辑，但是最终会生成对应的自定义原生控件，以充分利用原生控件相对于WebView的较高的绘制效率。
 
-## 一、框架架构
+## 一、Flutter框架架构
 Flutter的架构主要分成三层:
 - Framework 
 - Engine
@@ -39,7 +47,7 @@ Embedder是一个**嵌入层**。
  1.**渲染引擎依靠跨平台的Skia图形库来实现**，依赖系统的只有图形绘制相关的接口，可以在最大程度上保证不同平台、不同设备的体验一致性;  
  2.**逻辑处理使用支持AOT的Dart语言**，执行效率也比JavaScript高得多。
  
-## 二、widget
+## 二、Widget
  
  目前上主流的思想，都希望将各个**ui控件解耦**，慢慢演变出组件化的思想。
    
