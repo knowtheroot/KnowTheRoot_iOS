@@ -1,6 +1,6 @@
 # Mach详解
 
-作者：[陈家黎]
+作者：[陈家黎](https://juejin.im/user/5caaf51ef265da24b67892f9)
 
 摘自《深入解析Mac OS X && iOS操作系统笔记》
 - 内核
