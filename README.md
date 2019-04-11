@@ -1,3 +1,4 @@
+![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/Main_Banner.png)
 # KnowTheRoot_iOS
 Principles of IOS system
 
