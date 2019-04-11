@@ -1,3 +1,4 @@
+![avatar](https://user-gold-cdn.xitu.io/2019/4/11/16a0b75d5c2b0f8e?w=600&h=190&f=jpeg&s=15670)
 ## 前言
 
 自iOS10 更新以来，Apple 表示这是 iOS 有史以来最大的升级(our biggest release yet)，更加智能开放的Siri、强化应用对3DTouch支持、 HomeKit 、电话拦截及全新设计的通知等等。
@@ -36,6 +37,7 @@ iOS10推送通知的有以下两个两个扩展框架:
 #### 3.1创建一个Service Extension
 **File -> New -> Target**  
 选择拓展
-![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/uinotificationextension02.png?raw=true)  
-随后点击创建拓展即可。
-发现此时在项目中出现“xxxServiceExtension”的文件夹。  
+![avatar](https://user-gold-cdn.xitu.io/2019/4/11/16a0b5a3b0c7c3f1?w=721&h=510&f=png&s=74746)
+随后点击创建拓展即可，发现此时在项目中出现“xxxServiceExtension”的文件夹。  
+文件夹中包含了推送拓展类NotificationService。  
+![avatar](https://user-gold-cdn.xitu.io/2019/4/11/16a0b6a785464631?w=331&h=61&f=png&s=8235)
