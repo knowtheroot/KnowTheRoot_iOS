@@ -32,3 +32,10 @@ iOS10推送通知的有以下两个两个扩展框架:
 当远程推送需要展示多媒体的时候，也需要在这下载，下载完毕之后，获取本地下载文件路径再进行展示。对下载附件多媒体得需要Service Extension。
 
 ### 3.UNNotificationServiceExtension实践
+
+#### 3.1创建一个Service Extension
+**File -> New -> Target**  
+选择拓展
+![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/uinotificationextension02.png?raw=true)  
+随后点击创建拓展即可。
+发现此时在项目中出现“xxxServiceExtension”的文件夹。  
