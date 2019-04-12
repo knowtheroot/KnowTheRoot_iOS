@@ -15,6 +15,19 @@
 		E8BA19D722602D5900E7E707 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA19D622602D5900E7E707 /* main.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E8BA19ED22602F5800E7E707 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E8BA19C422602D5700E7E707 /* NotificationExtensionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationExtensionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BA19C722602D5700E7E707 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +94,7 @@
 				E8BA19C022602D5700E7E707 /* Sources */,
 				E8BA19C122602D5700E7E707 /* Frameworks */,
 				E8BA19C222602D5700E7E707 /* Resources */,
+				E8BA19ED22602F5800E7E707 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
