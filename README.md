@@ -11,6 +11,12 @@ Principles of IOS system
 | [iOS底层原理：内存映射mmap详解](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84mmap%E8%AF%A6%E8%A7%A3.md) | 陈家黎 | 已完成 |
 | [iOS底层原理：Category.md](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/iOS%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%EF%BC%9ACategory.md) | 陈家黎 | 编辑中 |
 
+### iOS视图原理  
+| 文章标题 | 作者 | 文章状态 |
+| ------ | ------ | ------ |
+| [iOS视图原理：UIViewController生命周期](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E8%A7%86%E5%9B%BE%E5%8E%9F%E7%90%86/iOS%E8%A7%86%E5%9B%BE%E5%8E%9F%E7%90%86%EF%BC%9AUIViewController%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)| 陈家黎 | 编辑中 |
+| [iOS视图原理：事件传递](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E8%A7%86%E5%9B%BE%E5%8E%9F%E7%90%86/iOS%E8%A7%86%E5%9B%BE%E5%8E%9F%E7%90%86%EF%BC%9A%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92.md) | 陈家黎 | 编辑中 |
+
 ### Flutter技术详解
 | 文章标题 | 作者 | 文章状态 |
 | ------ | ------ | ------ |
