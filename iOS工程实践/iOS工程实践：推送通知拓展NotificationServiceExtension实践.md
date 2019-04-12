@@ -34,10 +34,59 @@ iOS10推送通知的有以下两个两个扩展框架:
 
 ### 3.UNNotificationServiceExtension实践
 
-#### 3.1创建一个Service Extension
+#### 3.1 创建一个Service Extension
 **File -> New -> Target**  
 选择拓展
 ![avatar](https://user-gold-cdn.xitu.io/2019/4/11/16a0b5a3b0c7c3f1?w=721&h=510&f=png&s=74746)
 随后点击创建拓展即可，发现此时在项目中出现“xxxServiceExtension”的文件夹。  
 文件夹中包含了推送拓展类NotificationService。  
 ![avatar](https://user-gold-cdn.xitu.io/2019/4/11/16a0b6a785464631?w=331&h=61&f=png&s=8235)
+#### 3.2 测试
+第一步，选择target为extension，运行项目：
+![](https://user-gold-cdn.xitu.io/2019/4/12/16a0f641622a72b7?w=452&h=38&f=png&s=17152)
+第二步，选择当前项目
+![](https://user-gold-cdn.xitu.io/2019/4/12/16a0f7478b3d217f?w=440&h=407&f=png&s=71211)
+  
+第三步，在NotificationService.m中的didReceiveNotificationRequest中添加断点：
+
+![](https://user-gold-cdn.xitu.io/2019/4/12/16a0f75e5408304b)
+第四步，发个远程推送，注意，本地推送是没反应的。
+
+#### 3.2 远程推送相关注意事项
+相对于普通推送，推送服务拓展payload的内容基本相同，举个例子：  
+```
+{
+  "aps":{
+    "alert":{
+      "title":"iOS 10 title",
+      "subtitle":"iOS 10 subtitle",
+      "body":"iOS 10 body"
+    },
+    "mutable-content":1,
+    "category":"saySomethingCategory",
+    "sound":"default",
+    "badge":3
+  }
+}
+```
+注意，推送内容多了一个**mutable-content**，它表示我们会在接收到通知时对内容进行更改。  
+开发者在didReceiveNotificationRequest方法中有**30秒**的时间对推送内容到达前进行处理。例如：
+```
+- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
+    self.contentHandler = contentHandler;
+    self.bestAttemptContent = [request.content mutableCopy];
+    
+    // Modify the notification content here...
+    self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [modified]", self.bestAttemptContent.title];
+    self.bestAttemptContent.body = @"我是新修改的body";
+    self.bestAttemptContent.title = @"我是新修改的title";
+    self.bestAttemptContent.subtitle = @"我是新修改的subtitle";
+    
+    self.contentHandler(self.bestAttemptContent);
+}
+```
+#### 3.3 推送测试工具
+这里推荐Knuff：
+https://github.com/KnuffApp/Knuff
+
+  [参考文献http://www.cocoachina.com/ios/20160628/16833.html](http://www.cocoachina.com/ios/20160628/16833.html)
