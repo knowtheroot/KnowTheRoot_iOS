@@ -29,7 +29,7 @@ NSLog(@"address = %p",str2);
 - 以stringWithFormat方法声明的字符串是NSCFString，在堆上分配内存
 
 ## 二、深拷贝和浅拷贝
-
+### 1.copy和mutableCopy
 先做个小测试：
 ```
 NSString *str1 = @"test";
@@ -41,12 +41,33 @@ NSLog(@"str3 address = %p", str3);
 ```
 输出结果：
 ```
-2019-04-14 13:19:19.331228+0800 NSStringAndNSMutableString[15860:56673] str1 address = 0x10dd72068
-2019-04-14 13:19:19.331355+0800 NSStringAndNSMutableString[15860:56673] str2 address = 0x10dd72068
-2019-04-14 13:19:19.331443+0800 NSStringAndNSMutableString[15860:56673] str3 address = 0x6000005faac0
+str1 address = 0x10dd72068
+str2 address = 0x10dd72068
+str3 address = 0x6000005faac0
 ```
 可以看到：
 - **copy操作为浅拷贝**，两个指针指向的是同一个内存地址
 - **mutableCopy为深拷贝**，指向的是两个不同的内存地址
 #### 原因：
 **mutableCopy操作是将对象拷贝到堆上，引用计数加1。**
+
+### 2.NSString和NSMutableString的拷贝
+
+#### 2.1 NSString的拷贝
+输入代码：
+```
+NSString *str1 = @"123";
+NSString *str2 = @"123";
+NSLog(@"str1 address = %p", str1);
+NSLog(@"str2 address = %p", str2);
+```
+打印输出：
+```
+str1 address = 0x10aed3068
+str2 address = 0x10aed3068
+```
+发现str1和str2都是_NSCFConstantString，既@"123"存储在文字常量区，**指针str1和str2都指向同一个内存地址**。  
+若当str1改变内容后，就创建了新的对象，则str1指向另一块内存地址，换言之，如果此时将str1置为nil，也完全不影响str2，所以得出结论：**NSString为浅拷贝**。
+
+#### 2.2 NSMutableString的拷贝
+
