@@ -15,3 +15,38 @@ NSString (NSStringEncodingDetection)
 NSString继承自NSObject。
 
 ### 2.NSString的C底层实现
+以不同的方式创建NSString：
+```
+NSString *str1 = @"123";
+NSLog(@"address = %p",str1);
+NSString *str2 = [NSString stringWithFormat:@"123"];
+NSLog(@"address = %p",str2);
+```
+得到不同的字符串对象：
+![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/NSStringAndNSMutableString01.png?raw=true)
+可以发现，两种声明方式的isa是不同的。  
+- 以@""方式声明的字符串是_NSCFConstantString，内存地址一样
+- 以stringWithFormat方法声明的字符串是NSCFString，在堆上分配内存
+
+## 二、深拷贝和浅拷贝
+
+先做个小测试：
+```
+NSString *str1 = @"test";
+NSString *str2 = [str1 copy];
+NSString *str3 = [str1 mutableCopy];
+NSLog(@"str1 address = %p", str1);
+NSLog(@"str2 address = %p", str2);
+NSLog(@"str3 address = %p", str3);
+```
+输出结果：
+```
+2019-04-14 13:19:19.331228+0800 NSStringAndNSMutableString[15860:56673] str1 address = 0x10dd72068
+2019-04-14 13:19:19.331355+0800 NSStringAndNSMutableString[15860:56673] str2 address = 0x10dd72068
+2019-04-14 13:19:19.331443+0800 NSStringAndNSMutableString[15860:56673] str3 address = 0x6000005faac0
+```
+可以看到：
+- **copy操作为浅拷贝**，两个指针指向的是同一个内存地址
+- **mutableCopy为深拷贝**，指向的是两个不同的内存地址
+#### 原因：
+**mutableCopy操作是将对象拷贝到堆上，引用计数加1。**
