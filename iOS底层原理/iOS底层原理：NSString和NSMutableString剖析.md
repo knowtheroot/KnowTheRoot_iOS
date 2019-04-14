@@ -99,6 +99,10 @@ mutableStr2 address = 0x600001b4e400
 - copy产生的新对象为NSString类型
 - mutableCopy产生的新对象为NSMutableString类型
 - NSMutaleString之所以能改变大小是因为在堆内存上
+NSString的调方法增加字符串，会先拿到原理的字符串，然后复制一份，再在新复制的那个对象上进行修改，
+**实质返回的是一个新对象**，原来的字符串并没有变化。  
+NSMutableString修改字符串，就是在原来的字符串上进行修改的，**操作的是同一个对象**
+所有称NSString是不可变的，NSMutableString时可变的。
 
 #### 4.拓展问题
 
