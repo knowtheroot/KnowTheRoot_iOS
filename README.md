@@ -25,6 +25,9 @@ Principles of IOS system
 | [Flutter技术原理详解](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/Flutter%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3.md) | 陈家黎 | 编辑中 |
 
 ### C++知识点总结
+| 文章标题 | 作者 | 文章状态 |
+| ------ | ------ | ------ |
+| [C++内存管理](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/C%2B%2B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/C%2B%2B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93%EF%BC%9AC%2B%2B%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)| 陈家黎 | 编辑中 |
 
 ## Contact
 - E-mail:cjlcooper@163.com
