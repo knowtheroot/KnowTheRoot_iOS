@@ -2,7 +2,8 @@
 ![](https://img.shields.io/badge/stars-100%2B-green.svg)
 ![](https://img.shields.io/badge/issues-5%20open-orange.svg)
 # KnowTheRoot_iOS
-Principles of IOS system
+Principles of IOS system  
+This project aims to learn and share the knowledge and experience of iOS development, and try to build a complete stack development system.
 
 ## 文章列表
 
