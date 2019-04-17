@@ -1,4 +1,4 @@
-# ReactNative技术详解：React-Naitve框架概要
+# React-Native技术详解：React-Naitve框架概要
 
 ## 一、简介
 
