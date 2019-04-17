@@ -37,6 +37,7 @@ This project aims to learn and share the knowledge and experience of iOS develop
 | 文章标题 | 作者 | 文章状态 |
 | ------ | ------ | ------ |
 | [React-Native技术详解：React-Naitve框架概要](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/React-Native%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3/React-Native%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%9AReact-Naitve%E6%A1%86%E6%9E%B6%E6%A6%82%E8%A6%81.md)| 陈家黎 | 已完成 |
+| [React-Native技术详解：通信机制详解](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/React-Native%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3/React-Native%E6%8A%80%E6%9C%AF%E8%AF%A6%E8%A7%A3%EF%BC%9A%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E8%AF%A6%E8%A7%A3.md)| 陈家黎 | 编辑中 |
 
 ### Cocoapods原理
 
