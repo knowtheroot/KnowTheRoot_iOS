@@ -26,3 +26,30 @@ OCManager.query("SELECT * FROM table", function(result) {
 ```
 ## 二、模块配置表
 
+### 1.什么是模块配置表？
+从上面的例子思考，JS是如何知道OC有某个方法的呢？这里就要引入一个概念——“**模块配置表**”。  
+模块配置表里包含：
+- 模块ID（ModuleId）
+- 方法ID（MethodId）
+- 参数和参数类型（Arguments）
+  
+当 Objective-C 接收到这三个值后，就可以通过 runtime 唯一确定要调用的是哪个函数，然后调用这个函数。
+
+### 2.bridge
+
+**OC端和JS端分别各有一个bridge**，两个bridge都保存了同样一份模块配置表，JS调用OC模块方法时，通过bridge里的配置表把模块方法转为模块ID和方法ID传给OC，OC通过bridge的模块配置表找到对应的方法执行。
+
+### 3.模块配置表的生成
+
+我们在新建一个OC模块时，JS和OC都不需要为新的模块手动去某个地方添加一些配置，**模块配置表是自动生成的**，只要项目里有一个模块，就会把这个模块加到配置表上，那这个模块配置表是怎样自动生成的呢？  
+分以下两个步骤：
+
+#### 3.1 取所有模块的类
+每个模块类都实现了RCTBridgeModule接口，所以只要通过runtime的任意一个方法：
+- objc_getClassList
+- objc_copyClassList
+  
+获取项目里所有的类，然后判断是否实现了RCTBridgeModule接口，就得到了所有的模块类。
+
+#### 3.2 取模块里暴露给JS的方法
+
