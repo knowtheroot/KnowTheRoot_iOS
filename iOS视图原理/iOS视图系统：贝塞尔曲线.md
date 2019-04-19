@@ -10,5 +10,10 @@
 
 ## 二、贝塞尔曲线的绘制原理
 
-在平面内选3个不同线的点并且依次用线段连接。
-![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/BezierPath01.png)
+在平面内选3个不同线的点并且依次用线段连接。  
+![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/BezierPath01.png)  
+在AB和BC线段上找出点D和点E，使得AD/AB = BE/BC。  
+![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/BezierPath02.png)  
+连接DE，并在DE上找出一点F，使得DF/DE = AD/AB = BE/BC。  
+![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/BezierPath03.png)  
+让选取的点D在第一条线段上从起点A，移动到终点B，找出所有点F，并将它们连起来。
