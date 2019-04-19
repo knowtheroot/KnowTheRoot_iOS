@@ -33,3 +33,12 @@
   
 根据控制点的个数，贝塞尔曲线被分为一阶贝塞尔曲线（0个控制点）、二阶贝塞尔曲线（1个控制点）、三阶贝塞尔曲线（2个控制点）等等。  
 系统给我们提供了一个叫做UIBezierPath类，用它可以画简单的圆形，椭圆，矩形，圆角矩形，也可以通过添加点去生成任意的图形，还可以简单的创建一条二阶贝塞尔曲线和三阶贝塞尔曲线。
+
+## 五、UIBezierPath的理解
+
+先来看一下官方文档对UIBezierPath的理解的定义：
+```
+A path that consists of straight and curved line segments that you can render in your custom views.
+```
+翻译过来就是：可在自定义视图中渲染的直线段和曲线段组成的路径。  
+
