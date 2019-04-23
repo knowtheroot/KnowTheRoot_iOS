@@ -52,4 +52,5 @@ OCManager.query("SELECT * FROM table", function(result) {
 获取项目里所有的类，然后判断是否实现了RCTBridgeModule接口，就得到了所有的模块类。
 
 #### 3.2 取模块里暴露给JS的方法
+JavaScript 是一种单线程的语言，它不具备自运行的能力，因此总是被动调用，Objective-C 创建了一个单独的线程，这个线程只用于执行 JavaScript 代码，而且 JavaScript 代码只会在这个线程中执行。
 
