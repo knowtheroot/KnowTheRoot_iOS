@@ -28,7 +28,7 @@ This project aims to learn and share the knowledge and experience of iOS develop
 | [iOS底层系统：NSString和NSMutableString剖析](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9ANSString%E5%92%8CNSMutableString%E5%89%96%E6%9E%90.md) | 陈家黎 | 已完成 |
 | [iOS底层系统：BSD层详解](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9ABSD%E5%B1%82%E8%AF%A6%E8%A7%A3.md) | 陈家黎 | 已完成 |
 | [iOS底层系统：LRU算法](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9ALRU%E7%AE%97%E6%B3%95.md) | 陈家黎 | 编辑中 |
-| [iOS底层系统：Mach调度原理](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9AMach%E8%B0%83%E5%BA%A6%E5%8E%9F%E7%90%86.md) | 陈家黎 | 编辑中 |
+| [iOS底层系统：Mach调度原理之调度原语](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9AMach%E8%B0%83%E5%BA%A6%E5%8E%9F%E7%90%86%E4%B9%8B%E8%B0%83%E5%BA%A6%E5%8E%9F%E8%AF%AD.md) | 陈家黎 | 编辑中 |
 
 
 ### iOS视图系统  
