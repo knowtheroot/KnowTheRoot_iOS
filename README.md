@@ -65,6 +65,7 @@ This project aims to learn and share the knowledge and experience of iOS develop
 | 文章标题 | 作者 | 文章状态 |
 | ------ | ------ | ------ |
 | [C++内存管理](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/C%2B%2B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/C%2B%2B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93%EF%BC%9AC%2B%2B%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)| 陈家黎 | 编辑中 |
+| [C++知识总结：虚函数](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/C%2B%2B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/C%2B%2B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93%EF%BC%9A%E8%99%9A%E5%87%BD%E6%95%B0.md)| 陈家黎 | 编辑中 |
 
 ## Contact
 - E-mail:cjlcooper@163.com
