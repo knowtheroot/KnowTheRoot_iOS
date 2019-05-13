@@ -50,6 +50,25 @@ struct thread {
     ...
     
     /* 调度信息 */
+    sched_mode_t sched_mode     /* 调度模式 */
+    sched_mode_t saved_mode     /* 在被迫模式降级时保存的模式 */
     
+    ...
+    ...
+    
+    /* 调度相关的状态位 */
+    integer_t sched_pri     /* 当前调度的优先级 */
+    integer_t priority      /* 基础优先级 */
+    integer_t importance    /* 任务相关的重要性 */
+    
+    ...
+    ...
+    
+    /* 定时相关的数据结构 */
+    timer_data_t user_timer     /* 用户定时器 */
+    
+    ...
+    ...
 }
 ```
+
