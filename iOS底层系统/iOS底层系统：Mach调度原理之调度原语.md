@@ -21,7 +21,35 @@
 这里以简化的代码为例子：
 ```
 struct thread {
-    /**/
-    queue_chain_t links;
+    /* 频繁读，但很少修改的字段 */
+    queue_chain_t links;        /* 运行队列/等待队列的链表连接 */
+    wait_queue_t wait_queue;        /* 所在的等待队列 */
+    
+    ...
+    ...
+    
+    /* thread_invoke中更新/使用的数据 */
+    vm_offset_t kernel_stack        /* 当前的内核栈 */
+    vm_offset_t reserved_stack      /* 预留的内核栈 */
+    
+    ...
+    ...
+    
+    /*
+     * 线程状态位
+    */
+    #define TH_WAIT         0x01        /* 在队列中等待 */
+    #define TH_SUSP         0x02        /* 停止，或请求停止 */
+    #define TH_RUN          0x04        /* 正在运行或在运行队列中 */
+    #define TH_UNINT        0x08        /* 在不可中断的等待 */
+    #define TH_TERMINATE    0x10        /* 终止时同时运行 */
+    #define TH_TERMINATE2   0x20        /* 添加到终止队列 */
+    #define TH_IDLE         0x80        /* 空闲线程 */
+    
+    ...
+    ...
+    
+    /* 调度信息 */
+    
 }
 ```
