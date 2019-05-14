@@ -9,6 +9,7 @@ Principles of IOS system
 This project aims to learn and share the knowledge and experience of iOS development, and try to build a complete stack development system.
 
 KnowTheRoot，中文名译为“知本”，取自《大学》，旨在了解iOS开发的底层原理。
+欢迎提交Issue与PR，为帮助我们更好的维护此项目。
 
 ## 说明
 
