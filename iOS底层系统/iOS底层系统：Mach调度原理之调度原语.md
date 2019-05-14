@@ -178,3 +178,25 @@ Mach提供了完整的一套用于操作任务的API。
 类似任务相关的API，Mach还提供了丰富的线程管理API。这些API大部分都和任务API的功能类似。  
 实际上，任务API通常的实现方法就是**遍历任务中的线程列表，然后对每个线程执行对应的操作**。  
 这些调用大部分都是通过Mach消息实现的。
+> 注意：phtread中的指POSLX的系统调用。
+
+### 1.内核私有的线程API
+
+Mach内核提供了一组线程控制的函数，这些函数只能内核态中调用，这里暂时不做展开。
+
+### 2.线程创建
+
+我们特别关注一下线程创建的API。  
+这部分接口定义在<mach/ARCH/task.h>中：
+| Mach线程API | 用途 |
+| ------ | ------ |
+| **thread_create**(task_t parent, thread_act_t *child_act) | 在parent任务中创建一个线程，将结果返回在child_act中 |
+| **thread_create_running**(task_t parent, thread_state_flavor_t flavor, thread_state_t new_state, mach_msg_type_number_t nsCnt, thread_act_t *child_act) | 在parent任务中创建一个线程，其初始状态为new_state，thread_state_t与机器架构有关 |
+
+注意第一个参数是task_t，这个参数表示创建线程的任务。  
+从Mach的角度看，线程可以创建在任何任务中，只要用户具有任务对应的端口即可。  
+> **当调用pthread_create()的时候，底层转而会调用Mach的APi调用thread_create()方法。**
+
+##### 注意：
+
+创建一个线程并不困难，但是要让线程做有意义的事情则不是那么容易了。这一内容将在后面讨论。
