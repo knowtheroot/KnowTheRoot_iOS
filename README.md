@@ -1,4 +1,5 @@
-![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/Main_Banner.png)
+<div align="center">![Screenshot from 2018-04-12 10:51:38.png](https://upload-images.jianshu.io/upload_images/10028058-8f88a15298d8ef12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
+条件随机场模型示意图 </div>
 ![](https://img.shields.io/badge/stars-100%2B-green.svg)
 ![](https://img.shields.io/badge/issues-5%20open-orange.svg)
 # KnowTheRoot_iOS
