@@ -1,5 +1,4 @@
 ![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/Main_Banner.png)
-<div align=center>![这里写图片描述](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/Main_Banner.png)
 ![](https://img.shields.io/badge/stars-100%2B-green.svg)
 ![](https://img.shields.io/badge/issues-5%20open-orange.svg)
 # KnowTheRoot_iOS
