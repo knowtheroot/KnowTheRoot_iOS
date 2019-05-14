@@ -1,4 +1,6 @@
-![avatar](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/Main_Banner.png)
+<p align="center" >
+  <img src="https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/Resources/Imgs/Main_Banner.png" alt="KnowTheRoot" title="KnowTheRoot">
+</p>
 ![](https://img.shields.io/badge/stars-100%2B-green.svg)
 ![](https://img.shields.io/badge/issues-5%20open-orange.svg)
 # KnowTheRoot_iOS
