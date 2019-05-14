@@ -149,3 +149,32 @@ struct task {
 
 ## 三、任务和线程相关的API
 
+### 1.获取当前的任务和线程
+
+在任何时刻，内核都必须能够获得当前任务和当前线程的句柄。  
+内核分别通过：
+- current_task()
+- current_thread()
+  
+两个函数来完成。
+
+### 2.函数内部实现
+
+以上两个函数都是对“fast”版本的函数调用的宏。既：  
+- current_task()调用current_task_fast()
+- current_thread()调用current_thread_fast()
+
+## 四、任务相关的API
+
+Mach提供了完整的一套用于操作任务的API。  
+这里列举几个接口：
+| Mach任务相关API | 用途 |
+| ------ | ------ |
+| mach_task_self() | 获取任务端口，带有发送权限的名称 |
+| task_create(task_t target_task, ledger_array_t ledgers, mach_msg_type_number_t boolean_t task_t *child_task) | 以target_task为父任务创建一个child_task。 |
+
+## 五、线程相关的API
+
+类似任务相关的API，Mach还提供了丰富的线程管理API。这些API大部分都和任务API的功能类似。  
+实际上，任务API通常的实现方法就是**遍历任务中的线程列表，然后对每个线程执行对应的操作**。  
+这些调用大部分都是通过Mach消息实现的。
