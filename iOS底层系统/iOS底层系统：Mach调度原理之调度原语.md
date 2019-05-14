@@ -109,16 +109,32 @@ struct task {
     ...
     
     /* 任务中的线程 */
-    queue_head_t threads            /* 用FIFO队列保存线程 */
-    int thread_count                /* 线程队列中的线程数 */
-    unit32_t active_thread_count    /* 活动的线程数 */
+    queue_head_t threads;            /* 用FIFO队列保存线程 */
+    int thread_count;                /* 线程队列中的线程数 */
+    unit32_t active_thread_count;    /* 活动的线程数 */
     
-    integer_t priority      /* 线程基础优先级 */
-    integer_t max_priority  /* 线程的最高优先级 */
+    integer_t priority;      /* 线程基础优先级 */
+    integer_t max_priority;  /* 线程的最高优先级 */
     
     ...
     ...
     
+    //每个任务都有自己私有的端口名称空间
+    struck ipc_space *itk_space;
     
+    ...
+    ...
+    
+    #ifdef MACH_BSD
+        void *bsd_info;     //指向BSD进程对象
+    #endif
 }
 ```
+#### 任务存在的目的
+
+就本身而言，任务是没有生命的。**任务存在的目的就是要成为一个或多个线程的容器**。  
+任务中的线程都在threads成员中维护，这是一个包含thread_count个线程的队列。
+
+#### 任务的操作
+
+**大部分针对任务的操作实际上就是遍历给定任务中的所有线程，并对这些线程进行对应的线程操作**。
