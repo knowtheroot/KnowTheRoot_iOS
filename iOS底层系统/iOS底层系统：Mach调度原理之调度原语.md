@@ -29,8 +29,8 @@ struct thread {
     ...
     
     /* thread_invoke中更新/使用的数据 */
-    vm_offset_t kernel_stack        /* 当前的内核栈 */
-    vm_offset_t reserved_stack      /* 预留的内核栈 */
+    vm_offset_t kernel_stack;        /* 当前的内核栈 */
+    vm_offset_t reserved_stack;      /* 预留的内核栈 */
     
     ...
     ...
@@ -50,22 +50,22 @@ struct thread {
     ...
     
     /* 调度信息 */
-    sched_mode_t sched_mode     /* 调度模式 */
-    sched_mode_t saved_mode     /* 在被迫模式降级时保存的模式 */
+    sched_mode_t sched_mode;     /* 调度模式 */
+    sched_mode_t saved_mode;     /* 在被迫模式降级时保存的模式 */
     
     ...
     ...
     
     /* 调度相关的状态位 */
-    integer_t sched_pri     /* 当前调度的优先级 */
-    integer_t priority      /* 基础优先级 */
-    integer_t importance    /* 任务相关的重要性 */
+    integer_t sched_pri;     /* 当前调度的优先级 */
+    integer_t priority;      /* 基础优先级 */
+    integer_t importance ;   /* 任务相关的重要性 */
     
     ...
     ...
     
     /* 定时相关的数据结构 */
-    timer_data_t user_timer     /* 用户定时器 */
+    timer_data_t user_timer;     /* 用户定时器 */
     
     ...
     ...
@@ -86,4 +86,39 @@ Mach API的**thread_create() 就是通过thread_create_internal()实现的**。
 
 ## 二、任务（task）
 
-任务（task）是一种容器对象。虚拟内存空间和其他资源都是通过这个容器对象管理的。
+任务（task）是一种容器对象。虚拟内存空间和其他资源都是通过这个容器对象管理的。  
+资源被进一步抽象为端口。  
+因此资源的共享实际上相当于允许对对应端口进行访问。
+> 每一个BSD进程（也就是OS X进程）都在底层关联了一个Mach任务对象。
+
+相对于线程，任务是一个比较轻量级的数据结构：
+```
+struct task {
+    /* 同步相关的信息 */
+    unit_32_t ref_count;     /* 引用计数 */
+    boolean_t active;        /* 任务还没有终止 */
+    boolean_t halting;       /* 任务被停止 */
+    
+    ...
+    ...
+    
+    /* 杂项 */
+    vm_map_t map;       /* 地址空间映射 */
+    
+    ...
+    ...
+    
+    /* 任务中的线程 */
+    queue_head_t threads            /* 用FIFO队列保存线程 */
+    int thread_count                /* 线程队列中的线程数 */
+    unit32_t active_thread_count    /* 活动的线程数 */
+    
+    integer_t priority      /* 线程基础优先级 */
+    integer_t max_priority  /* 线程的最高优先级 */
+    
+    ...
+    ...
+    
+    
+}
+```
