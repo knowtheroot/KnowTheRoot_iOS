@@ -167,7 +167,8 @@ struct task {
 ## 四、任务相关的API
 
 Mach提供了完整的一套用于操作任务的API。  
-这里列举几个接口：
+这里列举几个接口：  
+
 | Mach任务相关API | 用途 |
 | ------ | ------ |
 | mach_task_self() | 获取任务端口，带有发送权限的名称 |
@@ -187,7 +188,8 @@ Mach内核提供了一组线程控制的函数，这些函数只能内核态中�
 ### 2.线程创建
 
 我们特别关注一下线程创建的API。  
-这部分接口定义在<mach/ARCH/task.h>中：
+这部分接口定义在<mach/ARCH/task.h>中：  
+
 | Mach线程API | 用途 |
 | ------ | ------ |
 | **thread_create**(task_t parent, thread_act_t *child_act) | 在parent任务中创建一个线程，将结果返回在child_act中 |
