@@ -58,6 +58,8 @@ KnowTheRoot，中文名译为“知本”，取自《大学》，旨在了解iOS
 | 文章标题 | 作者 | 文章状态 |
 | ------ | ------ | ------ |
 | [iOS工程实践：int和NSInteger的区别](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/iOS%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%EF%BC%9Aint%E5%92%8CNSInteger%E7%9A%84%E5%8C%BA%E5%88%AB.md)| 陈家黎 | 已完成 |
+---
+## 跨平台技术
 
 ### Flutter技术详解
 | 文章标题 | 作者 | 文章状态 |
