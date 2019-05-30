@@ -71,7 +71,7 @@ struct thread {
     ...
 }
 ```
-
+thread结构体中包含thread_basic_info字段，记录了线程的基本信息。
 #### 线程模板thread_template
 
 可以发现，thread的数据结构是非常巨大的，因此大部分创建线程的时候都是**从一个通用的模板复制而来**，这个模板使用默认值填充这个数据结构。这个模板名为thread_template。  
