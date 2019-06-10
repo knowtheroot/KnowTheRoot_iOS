@@ -35,6 +35,7 @@ KnowTheRoot，中文名译为“知本”，取自《大学》，旨在了解iOS
 | [iOS底层系统：BSD层详解](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9ABSD%E5%B1%82%E8%AF%A6%E8%A7%A3.md) | 陈家黎 | 已完成 |
 | [iOS底层系统：LRU算法](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9ALRU%E7%AE%97%E6%B3%95.md) | 陈家黎 | 编辑中 |
 | [iOS底层系统：Mach调度原理之调度原语](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9AMach%E8%B0%83%E5%BA%A6%E5%8E%9F%E7%90%86%E4%B9%8B%E8%B0%83%E5%BA%A6%E5%8E%9F%E8%AF%AD.md) | 陈家黎 | 已完成 |
+| [iOS底层系统：虚拟内存](https://github.com/knowtheroot/KnowTheRoot_iOS/blob/master/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F/iOS%E5%BA%95%E5%B1%82%E7%B3%BB%E7%BB%9F%EF%BC%9A%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.md) | 陈家黎 | 编辑中 |
 
 
 ### iOS视图系统  
